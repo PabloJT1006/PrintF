@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjimenez <pjimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/04/18 16:24:57 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:23:04 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "printf.h"
 
 int	str_valid(char *str)
 {
@@ -40,7 +40,7 @@ int	str_valid(char *str)
 	return (1);
 }
 
-int	negative(int nbr)
+int	negative(unsigned int nbr)
 {
 	if (nbr < 0)
 	{
@@ -62,7 +62,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(unsigned int nbr, char *base)
 {
 	int	i;
 	int	j;
@@ -90,8 +90,4 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 	}
 }
-int	main(void)
-{
-	ft_putnbr_base(0177, "01234567");
-	return (0);
-}
+
