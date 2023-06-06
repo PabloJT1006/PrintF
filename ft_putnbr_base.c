@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/05 19:23:04 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:55:13 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
-
+//para el formato de la p utilizar esta fincion pero escribiendo el 0x delante, poco mas
 void	ft_putnbr_base(unsigned int nbr, char *base)
 {
 	int	i;
