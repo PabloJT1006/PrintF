@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alpha.c                                            :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:16:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/07 17:48:44 by pjimenez         ###   ########.fr       */
+/*   Created: 2023/06/07 18:33:58 by pjimenez          #+#    #+#             */
+/*   Updated: 2023/06/07 18:36:52 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
 #include "libft/libft.h"
 
-void	ft_putchar(char c)
+int ft_printnbr(int n)
 {
-	write(1,&c,sizeof(char));
+	char	*num;
+	int		i;
+	if (n == 0)
+		i++;
+	num = ft_itoa(n);
+	i = ft_printstr(num);
+	free(num);
+	return (i);
 }
-
-int	ft_printstr(char *s)
-{
-    write(1,s,ft_strlen(s));
-	return (ft_strlen(s));
-}
-

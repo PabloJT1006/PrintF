@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/06 13:55:13 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:58:09 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,28 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
+int	ft_printxX(unsigned int n, char const str)
+{
+	int i;
+
+	i = 0;
+	if (str == 'x')
+		i = ft_putnbr_base(n, "123456789abcdef");
+	else if
+		i = ft_putnbr_base(n, "123456789ABCDEF");
+	return(i);
+}
+		
+
+
 //para el formato de la p utilizar esta fincion pero escribiendo el 0x delante, poco mas
-void	ft_putnbr_base(unsigned int nbr, char *base)
+int	ft_putnbr_base(unsigned int nbr, char *base)
 {
 	int	i;
 	int	j;
-
+	int	cont;
+	
+	cont = 0;
 	j = 0;
 	if (str_valid(base))
 		i = ft_strlen(base);
@@ -85,9 +101,11 @@ void	ft_putnbr_base(unsigned int nbr, char *base)
 			if (j == nbr)
 			{
 				write(1, &base[j], 1);
+				cont = 0;
 			}
 			j++;
 		}
 	}
+	return (cont);
 }
 

@@ -1,102 +1,37 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   prueba.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/05 19:23:18 by pjimenez         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "printf.h"
-
-int	str_valid(char *str)
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
+void imprimir_argumentos(int num_args, ...)
 {
-	int	i;
-	int	j;
+    va_list argumentos;
+    va_start(argumentos, num_args);
 
-	i = 0;
-	while (str[i])
-	{
-		if ((str[i] == '+' || str[i] == '-'))
-			return (0);
-		j = i + 1;
-		while (str[j])
-		{
-			if (str[j] == str[i])
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	if (i <= 1)
-	{
-		return (0);
-	}
-	return (1);
+    for (int i = 0; i < num_args; i++)
+    {
+        int arg = va_arg(argumentos, int);
+        printf("Argumento %d: %d\n", i + 1, arg);
+    }
+
+    va_end(argumentos);
 }
 
-int	negative(unsigned int nbr)
+int probando(char *str)
 {
-	if (nbr < 0)
-	{
-		write(1, "-", 1);
-		nbr *= -1;
-	}
-	return (nbr);
+    int i = 0;
+    int print = 0;
+    while (str[i])
+    {
+        print = write(1,&str[i],1);
+        i++;
+    }
+    return (print);
 }
 
-int	ft_strlen(char *str)
+int main()
 {
-	int	i;
+    int print;
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putnbr_base(unsigned int nbr, char *base)
-{
-	int	i;
-	int	j;
-
-	j = 0;
-	if (str_valid(base))
-		i = ft_strlen(base);
-	else
-		return ;
-	nbr = negative(nbr);
-	if (nbr >= i)
-	{
-		ft_putnbr_base((nbr / i), base);
-		ft_putnbr_base((nbr % i), base);
-	}
-	else
-	{
-		while (base[j])
-		{
-			if (j == nbr)
-			{
-				write(1, &base[j], 1);
-			}
-			j++;
-		}
-	}
-}
-
-
-
-
-int main (void)
-{
-    ft_putnbr_base(-10,"0123456789abcdef");
-    
+    print = probando("hola que hase");
+    printf("%d", print);
     return (0);
 }
