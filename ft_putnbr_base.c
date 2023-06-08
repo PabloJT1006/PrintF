@@ -6,13 +6,14 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/07 18:58:09 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:58:51 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include "libft/libft.h"
 
-int	str_valid(char *str)
+static int	str_valid(char *str)
 {
 	int	i;
 	int	j;
@@ -40,7 +41,7 @@ int	str_valid(char *str)
 	return (1);
 }
 
-int	negative(unsigned int nbr)
+static int	negative(unsigned int nbr)
 {
 	if (nbr < 0)
 	{
@@ -50,49 +51,23 @@ int	negative(unsigned int nbr)
 	return (nbr);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-int	ft_printxX(unsigned int n, char const str)
-{
-	int i;
-
-	i = 0;
-	if (str == 'x')
-		i = ft_putnbr_base(n, "123456789abcdef");
-	else if
-		i = ft_putnbr_base(n, "123456789ABCDEF");
-	return(i);
-}
-		
-
-
 //para el formato de la p utilizar esta fincion pero escribiendo el 0x delante, poco mas
-int	ft_putnbr_base(unsigned int nbr, char *base)
+static	int	ft_putnbr_hexa(unsigned int nbr, char *base)
 {
-	int	i;
-	int	j;
-	int	cont;
+	size_t	i;
+	int		j;
+	int		cont;
 	
 	cont = 0;
 	j = 0;
 	if (str_valid(base))
 		i = ft_strlen(base);
 	else
-		return ;
-	nbr = negative(nbr);
+		return(0) ;
 	if (nbr >= i)
 	{
-		ft_putnbr_base((nbr / i), base);
-		ft_putnbr_base((nbr % i), base);
+		ft_putnbr_hexa((nbr / i), base);
+		ft_putnbr_hexa((nbr % i), base);
 	}
 	else
 	{
@@ -101,11 +76,21 @@ int	ft_putnbr_base(unsigned int nbr, char *base)
 			if (j == nbr)
 			{
 				write(1, &base[j], 1);
-				cont = 0;
+				cont++;
 			}
 			j++;
 		}
 	}
 	return (cont);
 }
+int	ft_printxX(unsigned int n, char const str)
+{
+	int i;
 
+	i = 0;
+	if (str == 'x')
+		i = ft_putnbr_hexa(n, "0123456789abcdef");
+	else if (str == 'X')
+		i = ft_putnbr_hexa(n, "0123456789ABCDEF");
+	return(i);
+}

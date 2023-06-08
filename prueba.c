@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-void imprimir_argumentos(int num_args, ...)
-{
-    va_list argumentos;
-    va_start(argumentos, num_args);
+// void imprimir_argumentos(int num_args, ...)
+// {
+//     va_list argumentos;
+//     va_start(argumentos, num_args);
 
-    for (int i = 0; i < num_args; i++)
-    {
-        int arg = va_arg(argumentos, int);
-        printf("Argumento %d: %d\n", i + 1, arg);
-    }
+//     for (int i = 0; i < num_args; i++)
+//     {
+//         int arg = va_arg(argumentos, int);
+//         printf("Argumento %d: %d\n", i + 1, arg);
+//     }
 
-    va_end(argumentos);
-}
+//     va_end(argumentos);
+// }
 
 int probando(char *str)
 {
@@ -29,9 +29,9 @@ int probando(char *str)
 
 int main()
 {
-    int print;
+    int *print;
 
     print = probando("hola que hase");
-    printf("%d", print);
+    printf("%p", print);
     return (0);
 }

@@ -6,17 +6,16 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:16:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/07 17:48:44 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:49:57 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
 #include "libft/libft.h"
 
-void	ft_putchar(char c)
+int	ft_printchar(int c)
 {
 	write(1,&c,sizeof(char));
+	return (1);
 }
 
 int	ft_printstr(char *s)
