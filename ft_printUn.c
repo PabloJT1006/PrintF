@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:11 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/08 17:41:14 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:42:05 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ static int	nUlength(unsigned int n)
 		cont++;
 	}
 	return (cont);
+}
+
+int	ft_printstr(char *s)
+{
+    write(1,s,ft_strlen(s));
+	return (ft_strlen(s));
 }
 
 static char	*ft_Uitoa(unsigned int n)
@@ -58,10 +64,7 @@ int ft_printUnbr(unsigned int n)
 {
 	char 	*num;
 	unsigned int	i;
-	if (n < 0)
-		n *= -1;
-	else if (n == 0)
-		i++;
+
 	num = ft_Uitoa((unsigned int)n);
 	i = ft_printstr(num);
 	free(num);

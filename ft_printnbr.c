@@ -6,16 +6,19 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 18:33:58 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/07 18:36:52 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:41:10 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include "printft.h"
 
 int ft_printnbr(int n)
 {
 	char	*num;
 	int		i;
+	
+	i = 0;
 	if (n == 0)
 		i++;
 	num = ft_itoa(n);

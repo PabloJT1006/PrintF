@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_printHexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/08 17:58:51 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:40:54 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "printft.h"
 #include "libft/libft.h"
 
 static int	str_valid(char *str)
@@ -41,22 +41,13 @@ static int	str_valid(char *str)
 	return (1);
 }
 
-static int	negative(unsigned int nbr)
-{
-	if (nbr < 0)
-	{
-		write(1, "-", 1);
-		nbr *= -1;
-	}
-	return (nbr);
-}
 
 //para el formato de la p utilizar esta fincion pero escribiendo el 0x delante, poco mas
 static	int	ft_putnbr_hexa(unsigned int nbr, char *base)
 {
-	size_t	i;
-	int		j;
-	int		cont;
+	size_t				i;
+	unsigned int		j;
+	int					cont;
 	
 	cont = 0;
 	j = 0;

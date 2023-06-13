@@ -6,17 +6,17 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:18:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/08 17:16:28 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:43:01 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "printf.h"
+#include "printft.h"
 
 static int	ft_hexaPtr(unsigned long n,	char * base)
 {
-	int		j;
-	int		i;
+	unsigned int		j;
+	unsigned int		i;
 	int		cont;
 
 	i = ft_strlen(base);
