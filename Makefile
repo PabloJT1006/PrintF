@@ -6,27 +6,44 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 15:59:39 by pjimenez          #+#    #+#              #
-#    Updated: 2023/06/13 16:56:19 by pjimenez         ###   ########.fr        #
+#    Updated: 2023/06/18 18:21:26 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = printft.a
-LIIBFT = libft
-FILES = ft_printHexa.c ft_printnbr.c ft_printP.c ft_printUn.c main.c
+LIBFT = libft
+LIBS = libs/
+
 FLAGS = -Wall -Wextra -Werror
-OBJS = $(FILES:.c=.o)
+
+SRC_DIR = src/
+OBJS_DIR = objs/
+
+SRC_FILES = ft_printHexa ft_printnbr ft_printP ft_printUn ft_printf
+
+FILES = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+
+
+OBJF		=	.cache_exists
+
 
 all : $(NAME)
+
 $(NAME):	$(OBJS)
 			@make -C $(LIBFT)
 			@cp libft/libft.a .
 			@mv libft.a $(NAME)
 			@ar rcs $(NAME) $(OBJS)
-$(OBJS) : $(FILES)
-	@gcc $(FLAGS) -c $(NAME)
+			
+$(OBJS_DIR)%.o: $(SRC_DIR)%.c | $(OBJf)
+			@gcc $(FLAGS) $(LIBS) -c $< -o $@
 
+$(OBJF):
+			@mkdir -p $(OBJ_DIR)
+		
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS_DIR)
 	make clean -C $(LIBFT)
 
 fclean: clean

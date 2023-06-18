@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 19:24:43 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/08 17:59:13 by pjimenez         ###   ########.fr       */
+/*   Created: 2023/06/07 18:33:58 by pjimenez          #+#    #+#             */
+/*   Updated: 2023/06/14 16:53:20 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  LIBFPRINTFT_H
-# include <unistd.h>
-# include <stdarg.h>
-# define LIBFTPRINTF_H
+#include "printft.h"
+#include "libft.h"
 
-int	ft_printchar(char c);
-int	ft_printstr(char *s);
-int ft_printnbr(int n);
-int	ft_printPtr(unsigned long n);
-int ft_printUnbr(unsigned int n);
-int	ft_printxX(unsigned int n, char const str);
-
-#endif
+int ft_printnbr(int n)
+{
+	char	*num;
+	int		i;
+	
+	i = 0;
+	if (n == 0)
+		i++;
+	num = ft_itoa(n);
+	i = ft_printstr(num);
+	free(num);
+	return (i);
+}
