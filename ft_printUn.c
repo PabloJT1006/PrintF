@@ -6,12 +6,12 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:11 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/13 16:42:05 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/19 16:59:06 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include "libft/libft.h"
+#include "libft.h"
 
 static int	nUlength(unsigned int n)
 {
