@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:11 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 17:32:57 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:38:34 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ static int	nUlength(unsigned int n)
 		cont++;
 	}
 	return (cont);
-}
-
-int	ft_printstr(char *s)
-{
-    write(1,s,ft_strlen(s));
-	return (ft_strlen(s));
 }
 
 static char	*ft_Uitoa(unsigned int n)
