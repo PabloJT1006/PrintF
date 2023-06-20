@@ -6,11 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 15:59:14 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 15:59:53 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:32:44 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 //meter algo para comprobar el %
 
 //devuleve un int que es la cantidad de caracteres, estos deveran ser contado

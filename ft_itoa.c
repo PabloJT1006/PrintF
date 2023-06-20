@@ -6,11 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 18:21:28 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 14:34:04 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:32:34 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	nlength(int n)
 {

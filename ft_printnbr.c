@@ -6,11 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 18:33:58 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 14:34:12 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:32:52 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_printnbr(int n)
 {
