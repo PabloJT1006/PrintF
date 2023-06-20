@@ -6,18 +6,17 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 15:59:14 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/19 16:58:54 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:59:53 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "printft.h"
+#include "libftprintf.h"
 //meter algo para comprobar el %
 
 //devuleve un int que es la cantidad de caracteres, estos deveran ser contado
 //en la misma funcion que los printea(write)
 
-int ft_format(char const format, va_list args)
+static int ft_format(char const format, va_list args)
 {
 	int	print;
 
@@ -27,7 +26,7 @@ int ft_format(char const format, va_list args)
 	else if (format == 's')
 		print += ft_printstr(va_arg(args, char *));
 	else if (format == 'p')
-		print =+ ft_printPtr(va_arg(args, unsigned long));
+		print += ft_printPtr(va_arg(args, unsigned long));
 	else if (format == 'd' || format == 'i')
 		print += ft_printnbr(va_arg(args, int));
 	else if (format == 'u')
@@ -52,6 +51,7 @@ int	ft_printf(char const *str, ...)
 	va_list	args;
 
 	i = 0;
+	j = 0;
 	print = 0;
 	va_start(args,str);
 	while (str[i])

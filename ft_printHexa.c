@@ -6,12 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/14 16:58:41 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:03:54 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printft.h"
-#include "libft.h"
+#include "libftprintf.h"
 
 static int	str_valid(char *str)
 {

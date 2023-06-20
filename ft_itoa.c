@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printUn.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:29:11 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 14:34:17 by pjimenez         ###   ########.fr       */
+/*   Created: 2023/05/22 18:21:28 by pjimenez          #+#    #+#             */
+/*   Updated: 2023/06/20 14:34:04 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	nUlength(unsigned int n)
+static int	nlength(int n)
 {
 	int	cont;
 
 	cont = 0;
+	if (n <= 0)
+	{
+		cont++;
+	}
 	while (n != 0)
 	{
 		n /= 10;
@@ -25,20 +29,14 @@ static int	nUlength(unsigned int n)
 	return (cont);
 }
 
-int	ft_printstr(char *s)
-{
-    write(1,s,ft_strlen(s));
-	return (ft_strlen(s));
-}
-
-static char	*ft_Uitoa(unsigned int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	len;
-	long ln;
+	long	ln;
 
 	ln = (long)n;
-	len = nUlength(ln);
+	len = nlength(ln);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
@@ -57,15 +55,4 @@ static char	*ft_Uitoa(unsigned int n)
 		len--;
 	}
 	return (str);
-}
-
-int ft_printUnbr(unsigned int n)
-{
-	char 	*num;
-	unsigned int	i;
-
-	num = ft_Uitoa((unsigned int)n);
-	i = ft_printstr(num);
-	free(num);
-	return (i);
 }
