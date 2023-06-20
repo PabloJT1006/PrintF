@@ -1,0 +1,1 @@
+gcc -Wall -Wextra -Werror alpha.c ft_itoa.c ft_printf.c ft_printHexa.c ft_printnbr.c ft_printP.c ft_printUn.c ft_strlen.c main.c
