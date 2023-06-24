@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:16:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/21 01:54:00 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:58:08 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ int	ft_printchar(char c)
 
 int	ft_printstr(char *s)
 {
-    write(1,s,ft_strlen(s));
+    if (s == NULL)
+	{
+		write(1,"(null)",6);
+		return (6);
+	}
+	
+	write(1,s,ft_strlen(s));
 	return (ft_strlen(s) );
 }
 

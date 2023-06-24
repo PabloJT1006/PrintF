@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 15:59:14 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/21 02:18:16 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/22 04:00:56 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int ft_format(char const format, va_list args)
 	else if (format == 's')
 		print += ft_printstr(va_arg(args, char *));
 	else if (format == 'p')
-		print += ft_printPtr(va_arg(args, unsigned long));
+		print += ft_printPtr(va_arg(args, uintptr_t));
 	else if (format == 'd' || format == 'i')
 		print += ft_printnbr(va_arg(args, int));
 	else if (format == 'u')

@@ -6,13 +6,13 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:18:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/20 17:32:55 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:01:21 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_hexaPtr(unsigned long n,	char * base)
+static int	ft_hexaPtr(uintptr_t n,	char * base)
 {
 	unsigned int		j;
 	unsigned int		i;
@@ -41,11 +41,12 @@ static int	ft_hexaPtr(unsigned long n,	char * base)
 	return (cont);
 }
 
-int	ft_printPtr(unsigned long n)
+int	ft_printPtr(uintptr_t n)
 {
 	int i;
 	
 	write(1, "0x" ,2);
-	i = ft_hexaPtr(n,"0123456789abcdef");
+	i = 2;
+	i += ft_hexaPtr(n,"0123456789abcdef");
 	return (i);
 }
