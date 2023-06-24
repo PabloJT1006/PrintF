@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 19:24:43 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/22 04:16:52 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/24 21:01:38 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_printxX(unsigned int n, char const str);
 size_t	ft_strlen(const char *str);
 char	*ft_itoa(int n);
 int		ft_printf(char const *str, ...);
+void	ft_putchar_fd(char c, int fd);
 
 #endif

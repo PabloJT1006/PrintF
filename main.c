@@ -4,8 +4,8 @@
 int main (void)
 {
     char *ptr = "hola";
-    
-    ft_printf(" Formato d e i hola %d la verdad que %d si no\n",0,-6);
+    int klk = write(1,"D",1);
+    ft_printf(" Formato d e i hola %d la verdad que %d si no\n",klk,-6);
     ft_printf(" Formato c %c Formato 2c %c\n",'a','X');
     ft_printf(" NULL %s NULL \n", NULL);
     // printf(" NULL %s NULL \n", NULL);
@@ -17,4 +17,6 @@ int main (void)
     ft_printf(" %x ", -1);
     ft_printf(" Formato %%\n");
     // ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+
+
 }
