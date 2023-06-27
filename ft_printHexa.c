@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/24 21:31:17 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:13:51 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static int ft_hexalen(unsigned	int n)
 
 int	ft_printxX(unsigned int n, char const str)
 {
+	if (n == 0)
+		return (write(1,"0",1));
 	if (str == 'x')
 		ft_putnbr_hexa(n, "0123456789abcdef");
 	else if (str == 'X')
