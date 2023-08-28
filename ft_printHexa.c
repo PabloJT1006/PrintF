@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:32:17 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/27 19:13:51 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/08/28 19:03:28 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,13 @@
 // // 	return (1);
 // // }
 
-
-//para el formato de la p utilizar esta fincion pero escribiendo el 0x delante, poco mas
-static	void ft_putnbr_hexa(unsigned int nbr, const char *base)
+//para el formato de la p utilizar esta fincion pero escribiendo el 
+//0x delante,poco mas
+static void	ft_putnbr_hexa(unsigned int nbr, const char *base)
 {
-	unsigned int		j;
-	
-	j = 0;
+	unsigned int	j;
 
+	j = 0;
 	if (nbr >= 16)
 	{
 		ft_putnbr_hexa((nbr / 16), base);
@@ -66,32 +65,29 @@ static	void ft_putnbr_hexa(unsigned int nbr, const char *base)
 	}
 }
 
-static int ft_hexalen(unsigned	int n)
+static int	ft_hexalen(unsigned int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (n != 0)
 	{
-		n = n/16;
+		n = n / 16;
 		i++;
 	}
-	return(i);	 
+	return (i);
 }
-
 
 int	ft_printxX(unsigned int n, char const str)
 {
 	if (n == 0)
-		return (write(1,"0",1));
+		return (write(1, "0", 1));
 	if (str == 'x')
 		ft_putnbr_hexa(n, "0123456789abcdef");
 	else if (str == 'X')
 		ft_putnbr_hexa(n, "0123456789ABCDEF");
-	return(ft_hexalen(n));
+	return (ft_hexalen(n));
 }
-
 
 // #include "ft_printf.h"
 

@@ -6,18 +6,17 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 12:18:08 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/06/27 21:13:53 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/08/28 19:04:45 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_hexaPtr(uintptr_t n,	char * base)
+static void	ft_hexaPtr(uintptr_t n, char *base)
 {
-	unsigned int		j;
-	
-	j = 0;
+	unsigned int	j;
 
+	j = 0;
 	if (n >= 16)
 	{
 		ft_hexaPtr((n / 16), base);
@@ -36,31 +35,30 @@ static void	ft_hexaPtr(uintptr_t n,	char * base)
 	}
 }
 
-static int ft_hexalen(uintptr_t n)
+static int	ft_hexalen(uintptr_t n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (n != 0)
 	{
-		n = n/16;
+		n = n / 16;
 		i++;
 	}
-	return(i);	 
+	return (i);
 }
 
 int	ft_printPtr(uintptr_t n)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	i += write(1, "0x" ,2);
+	i += write(1, "0x", 2);
 	if (n == 0)
-		i += write(1,"0",1);
+		i += write(1, "0", 1);
 	else
 	{
-		ft_hexaPtr(n,"0123456789abcdef");
+		ft_hexaPtr(n, "0123456789abcdef");
 		i += ft_hexalen(n);
 	}
 	return (i);
